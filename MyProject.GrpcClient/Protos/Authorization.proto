@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option csharp_namespace = "MyProject.GrpcClient";
+
+service Authorization {
+	rpc CheckAccess(AuthorizationRequest) returns (AuthorizationReply);
+}
+message AuthorizationRequest {
+	int32 user_id=1;
+	string hmo=2;
+}
+message AuthorizationReply{
+	bool allow=1;
+}
